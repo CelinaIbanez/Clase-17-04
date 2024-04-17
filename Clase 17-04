@@ -1,0 +1,355 @@
+---
+title: GRUPO HUDSON
+authors:
+  - name: María Celina Ibañez
+    thanks: Use footnote for providing further information about author (webpage, alternative address)---*not* for acknowledging funding agencies. Optional.
+    department: Facultad de Ingeniería Industrial
+    affiliation: Universidad Nacional de Cuyo
+    location: Mendoza, Argentina
+    email: mcelinaibanez@gmail.com
+  - name: María del Pilar Mobilia
+    department: Facultad de Ingeniería Industrial
+    affiliation: Universidad Nacional de Cuyo
+    location: Mendoza, Argentina
+    email: pilarmobilia@gmail.com
+  - name: Bernardita Zanella
+    department: Facultad de Ingeniería Industrial
+    affiliation: Universidad Nacional de Cuyo
+    location: Mendoza, Argentina
+    email: bernizanella2014@gmail.com
+  - name: Carla Torresi
+    department: Facultad de Ingeniería Industrial
+    affiliation: Universidad Nacional de Cuyo
+    location: Mendoza, Argentina
+    email: torresi.carla16@gmail.com
+  - name: Karima Valli 
+    department: Facultad de Ingeniería Industrial
+    affiliation: Universidad Nacional de Cuyo
+    location: Mendoza, Argentina
+    email: karimavallillalen@gmail.com
+  - name: Louise Berard
+    department: Facultad de Ingeniería Industrial
+    affiliation: Universidad Nacional de Cuyo
+    location: Mendoza, Argentina
+    email: louise.berard28@gmail.com
+abstract: |
+  Enter the text of your abstract here.
+keywords:
+  - blah
+  - blee
+  - bloo
+  - these are optional and can be removed
+bibliography: references.bib
+biblio-style: apa
+output: rticles::arxiv_article
+---
+
+# Introduction
+
+Here goes an introduction text
+
+# Headings: first level
+\label{sec:headings}
+
+You can use directly LaTeX command or Markdown text. 
+
+LaTeX command can be used to reference other section. See Section \ref{sec:headings}.
+However, you can also use **bookdown** extensions mechanism for this.
+
+## Headings: second level
+
+You can use equation in blocks
+
+$$
+\xi _{ij}(t)=P(x_{t}=i,x_{t+1}=j|y,v,w;\theta)= {\frac {\alpha _{i}(t)a^{w_t}_{ij}\beta _{j}(t+1)b^{v_{t+1}}_{j}(y_{t+1})}{\sum _{i=1}^{N} \sum _{j=1}^{N} \alpha _{i}(t)a^{w_t}_{ij}\beta _{j}(t+1)b^{v_{t+1}}_{j}(y_{t+1})}}
+$$
+
+But also inline i.e $z=x+y$
+
+### Headings: third level
+
+Another paragraph. 
+
+
+# Examples of citations, figures, tables, references
+\label{sec:others}
+
+You can insert references. Here is some text [@kour2014real; @kour2014fast] and see @hadash2018estimate.
+
+The documentation for \verb+natbib+ may be found at
+
+You can use custom blocks with LaTeX support from **rmarkdown** to create environment.
+
+::: {.center latex=true}
+  <http://mirrors.ctan.org/macros/latex/contrib/natbib/natnotes.pdf}>
+:::
+
+Of note is the command \verb+\citet+, which produces citations
+appropriate for use in inline text.  
+
+You can insert LaTeX environment directly too.
+
+\begin{verbatim}
+   \citet{hasselmo} investigated\dots
+\end{verbatim}
+
+produces
+
+\begin{quote}
+  Hasselmo, et al.\ (1995) investigated\dots
+\end{quote}
+
+\begin{center}
+  \url{https://www.ctan.org/pkg/booktabs}
+\end{center}
+
+
+## Figures
+
+You can insert figure using LaTeX directly. 
+
+See Figure \ref{fig:fig1}. Here is how you add footnotes. [^Sample of the first footnote.]
+
+\begin{figure}
+  \centering
+  \fbox{\rule[-.5cm]{4cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \caption{Sample figure caption.}
+  \label{fig:fig1}
+\end{figure}
+
+But you can also do that using R.
+
+```{r fig2, fig.cap = "Another sample figure"}
+plot(mtcars$mpg)
+```
+
+You can use **bookdown** to allow references for Tables and Figures.
+
+
+## Tables
+
+Below we can see how to use tables. 
+
+See awesome Table~\ref{tab:table} which is written directly in LaTeX in source Rmd file.
+
+\begin{table}
+ \caption{Sample table title}
+  \centering
+  \begin{tabular}{lll}
+    \toprule
+    \multicolumn{2}{c}{Part}                   \\
+    \cmidrule(r){1-2}
+    Name     & Description     & Size ($\mu$m) \\
+    \midrule
+    Dendrite & Input terminal  & $\sim$100     \\
+    Axon     & Output terminal & $\sim$10      \\
+    Soma     & Cell body       & up to $10^6$  \\
+    \bottomrule
+  \end{tabular}
+  \label{tab:table}
+\end{table}
+
+You can also use R code for that.
+
+```{r}
+knitr::kable(head(mtcars), caption = "Head of mtcars table")
+```
+
+
+## Lists
+
+- Item 1
+- Item 2 
+- Item 3
+
+    Código html w3
+
+````{verbatim}
+<html>
+<head>
+Titulo
+</head>
+<h1> Titulo </h1>
+</head>
+</head>
+
+````
+
+Este código es compatible con w3 Consortium Ver:  [@w3extensible] .
+
+Está conformado siguien las regles de paridad da tags. esto quiere decir que todo tag que se abre, luego se cierra.
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Mark Down Language
+
+```{verbatim}
+
+\section{Mark Down Language}
+Para comenzar a utilizar Mark Down hay una serie de pasos que debemos seguir.
+Comenzamos eligiendo un editor de texto.Podemos usar cualquier editor de texto para escribir en Markdown, como Bloc de Notas (Windows), TextEdit (Mac), Visual Studio Code, Atom o cualquier otro editor.
+\\Luego, procedemos a crear nuestro archivo, y a la hora de guardarlo, debemos hacerlo bajo la extensión .md.
+\\Finalmente, para visualizar el contenido realizado, utilizamos un visor de Markdown en línea o un procesador de Markdown integrado en algunos editores de texto. Esto nos permitirá ver cómo se verá el contenido una vez que se convierta a HTML u otro formato.
+\subsection{Títulos}
+En Markdown, un lenguaje de marcado ligero, podemos añadir títulos utilizando el símbolo de numeral #. La cantidad de numerales indica el nivel de jerarquía del título. Por ejemplo:\\
+\includegraphics[width=1\linewidth]{titulos.jpg}
+\\El número de numerales determina el tamaño y la jerarquía del título. Cuantos más numerales, menor es el nivel de jerarquía del título. Por ejemplo, # Título 1 es el título principal, mientras que ##### Título 5 es un título de quinto nivel, que suele ser el más pequeño y menos prominente.
+\\Algunas implementaciones de Markdown también permiten usar guiones o signos de igual para títulos de diferentes niveles, pero los numerales son la forma más común y recomendada de agregar títulos en Markdown.
+\subsection{Párrafos}
+En Markdown, podemos separar párrafos simplemente dejando una línea en blanco entre ellos. Por ejemplo:\\
+\includegraphics[width=1\linewidth]{parrafos.jpg}
+\\En este ejemplo, hay una línea en blanco entre los dos párrafos, lo que indica que son párrafos separados. Cuando se renderiza este texto en Markdown, los dos párrafos se mostrarán correctamente separados. Es una forma simple y natural de crear párrafos en Markdown.
+\subsection{Negrita}
+En Markdown, podemos poner palabras en negrita utilizando asteriscos o guiones bajos alrededor de la palabra o frase que deseamos destacar. Por ejemplo:\\
+\includegraphics[width=1\linewidth]{negrita.jpg}
+Ambas formas producirán el mismo resultado.
+\\Simplemente tenemos que asegurarnos de colocar los asteriscos o guiones bajos al principio y al final de la palabra o frase que deseamos resaltar en negrita.
+\subsection {Viñetas}
+En Markdown, podemos crear listas con viñetas utilizando asteriscos (*), guiones (-), o signos más (+). Por ejemplo:\\
+\includegraphics[width=1\linewidth]{viñetas.jpg}
+Este código generará una lista con viñetas.
+\\También podemos utilizar guiones o signos más para lograr el mismo resultado. Markdown es flexible en cuanto a qué tipo de viñetas preferimos usar, así que podemos elegir la que nos resulte más cómoda.
+\subsection{Imagen}
+En Markdown, podemos insertar imágenes utilizando la siguiente sintaxis:\\
+\includegraphics[width=1\linewidth]{imag 1.jpg}
+Donde:
+\\'Texto alternativo' es el texto que se muestra si la imagen no se puede cargar.
+\\'Ruta de la imagen' es la URL o la ruta relativa de la imagen que deseas insertar.
+\\Por ejemplo:\\
+\includegraphics[width=1\linewidth]{imag2.jpg}
+Esto mostrará la imagen con el texto alternativo "Logo de Markdown". Es importante asegurarse de que la ruta de la imagen sea correcta y accesible desde el contexto donde se está visualizando el documento Markdown.
+\subsection{Tabla}
+En Markdown, podemos crear una tabla utilizando barras verticales | para separar las columnas y guiones - para separar la primera fila (que generalmente se utiliza como encabezado) de las demás filas. Por ejemplo:\\
+\includegraphics[width=1\linewidth]{tabla1.jpg}
+\\Esto creará una tabla como esta:\\
+\includegraphics[width=1\linewidth]{tabla2.jpg}
+\\Cada línea representa una fila en la tabla. Las barras verticales | separan las celdas dentro de una fila, y los guiones - en la segunda fila (que sirve como separador) indican la alineación de las columnas (por defecto, las columnas están alineadas a la izquierda). Podemos ajustar la alineación agregando dos puntos : antes o después de los guiones. Por ejemplo, :--- indica que la columna está alineada a la izquierda, :---: indica que está centrada, y ---: indica que está alineada a la derecha.
+\subsection{Hipervínculo}
+En Markdown, podemos crear hipervínculos utilizando la siguiente sintaxis:\\
+\includegraphics[width=1\linewidth]{hiper1.jpg}
+\\Donde:
+\\'Texto del enlace' es el texto que se mostrará como enlace.
+'URL del enlace' es la dirección web a la que se dirige el enlace.
+\\Por ejemplo:\\
+\includegraphics[width=1\linewidth]{hiper2.jpg}
+\\Esto creará un enlace con el texto "Visita Google" que, al hacer clic en él, llevará al usuario a la página web de Google.
+```
+
+# Latex
+
+```{verbatim}
+\section{LaTeX}
+Para comenzar a utilizar LaTeX hay una serie de pasos que debemos seguir.
+Comenzamos eligiendo un editor de texto. Podemos utilizar editores especializados en LaTeX como TeXShop (para macOS), TeXworks, Texmaker, TexStudio o Overleaf (una plataforma en línea). Todos estos editores nos permiten escribir y compilar documentos LaTeX de manera efectiva.
+\\Luego, procedemos a crear nuestro archivo, y a la hora de guardarlo, debemos hacerlo bajo la extensión .tex.
+\\Finalmente, utilizamos la opción de compilación del editor para compilar nuestro documento LaTeX. Esto generará un archivo de salida (generalmente en formato PDF) con el documento formateado según las especificaciones de LaTeX.
+\\
+Para comenzar a escribir un documento en LaTex debemos colocar: "documentclass{article}". Antes de cada comando, como el anterior, debemos colocar una barra inversa invertida.
+\\
+
+Antes de comenzar a escribir el cuerpo del documento, es decir, antes de "begin{document}", debemos especificar los paquetes que vamos a utilizar, a continuación se detallan los mismos:\\
+
+\begin{itemize}
+  \item Para viñetas: "usepackage{enumitem}"
+  \item Para hyperlinks: "usepackage{hyperref}"
+  \item Para tablas: "usepackage{tabularx}"
+  \item Para imagenes: "usepackage{graphicx}"\\
+\end{itemize}
+
+Luego de haber enunciado los paquetes, debemos colocar el título del texto con "title{nombre del título}". Abajo de este podemos colocar los autores del documento con "author{nombre de los autores}", donde los nombres se pueden colocar usando simplemente comas o se pueden colocar uno debajo del otro de la siguiente manera: "author{Louise Berard, Bernardita Zanella, etc}", colocando 2 barras inversas invertidas entre cada nombre. Debajo podemos colocar la fecha con el siguiente comando: "date{Marzo 2024}".
+\\
+
+A continuación se comenzará el cuerpo del documento con "begin{document}" y se finalizará el mismo con "end{document}". Y luego dentro de estos dos comandos, se colocan los que vamos a describir a continuación para agregar viñetas, títulos y subtítulos, tablas, hyperlinks (tanto links de una página web cómo puede ser la de GitHub como nuestros correos electrónicos), imágenes y texto en negrita.
+\\
+
+\subsection{Títulos}
+Para crear títulos y subtítulos en LaTeX, se puede usar los comandos “section”, “subsection” y “subsubsection”.
+\begin{enumerate}
+    \item “section” se utiliza para crear un título principal.
+    \item “subsection”se utiliza para crear un subtítulo dentro de una sección.
+    \item “subsubsection” se utiliza para crear un subtítulo dentro de un subtítulo.\\
+\end{enumerate}
+Por ejemplo : 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{WhatsApp Image 2024-03-20 at 19.50.46 (1).jpeg}
+\end{figure}
+\FloatBarrier
+Que se puede observar de la siguiente manera :\\
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{WhatsApp Image 2024-03-20 at 19.50.46.jpeg}
+\end{figure}
+\FloatBarrier
+\subsection{Párrafos}
+Para separar en párrafos se usan las 2 barras inversas invertidas.
+\subsection{Negrita}  
+El comando “textbf{}” encierra el texto que deseas en negrita. Cuando compilas el documento LaTeX, se verá que el texto entre los corchetes aparecerá en negrita en el PDF resultante.\\
+\subsection{Viñetas}
+Para enumerar con números, se utiliza el entorno "enumerate". Dentro de este entorno, cada ítem se inicia con el comando "item", seguido del texto que se desea enumerar. Por ejemplo:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{WhatsApp Image 2024-03-20 at 19.50.47.jpeg}
+\end{figure}
+\FloatBarrier
+Para utilizar viñetas en lugar de números, se puede usar el entorno "itemize". Dentro de este entorno, cada ítem se inicia con el comando "item", seguido del texto que se desea incluir con viñetas. Por ejemplo :
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{WhatsApp Image 2024-03-20 at 19.50.46 (2).jpeg}
+\end{figure}
+\FloatBarrier
+Además, en el entorno "itemize", se puede cambiar el tipo de viñeta. Por defecto, se utilizan viñetas redondas, pero se pueden cambiar a viñetas cuadradas, rombos, etc., utilizando el comando "item[]" y especificando el tipo de viñeta entre corchetes.
+\subsection{Imagen}
+Para agregar una imagen a un documento LaTeX, primero se necesita asegurar de tener la imagen en un formato compatible, como JPEG, PNG o PDF.
+Luego, dentro del documento LaTeX, se debe cargar el paquete graphicx en el preámbulo con el comando "usepackage{graphicx}". Este paquete permite la inclusión de gráficos en tu documento.
+\\
+
+Después de cargar el paquete graphicx, se puede agregar la imagen utilizando el comando "includegraphics{}". 
+\\
+
+Dentro de los corchetes, se debe especificar la ruta de la imagen. Si la imagen está en la misma carpeta que tu archivo LaTeX, solo se necesita especificar el nombre del archivo. Por ejemplo : 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{WhatsApp Image 2024-03-20 at 19.50.45.jpeg}
+\end{figure}
+\FloatBarrier
+\begin{enumerate}
+    \item "[width=0.75linewidth]" se utiliza para especificar el ancho de la imagen en relación con el ancho de la línea de texto en el documento. En este caso, “0.75linewidth” significa que la imagen ocupará el 75$\%$ del ancho de la línea de texto.
+    \item "caption{Enter Caption}": con este comando se agrega una leyenda o título a tu figura o tabla en tu documento LaTeX.
+    \item "label{fig:enter-label}": este comando asigna una etiqueta a tu figura o tabla para que puedas referenciarla fácilmente en otras partes del documento.\\
+\end{enumerate}
+\subsection{Tabla}
+Una tabla en LaTeX se crea utilizando el entorno "table". Dentro de este entorno, usamos el entorno "tabular" para crear la tabla en sí. Primero, se especifica la estructura de la tabla dentro de llaves, donde se indica el formato de cada columna. Por ejemplo, si queremos tres columnas centradas y separadas con barras verticales, colocamos entre 2 llaves, primero una barra vertical, luego una "c", y repetimos esto dos veces más, completándose las tres columnas, y antes de cerrar con la llave colocamos otra barra vertical. 
+\\
+
+Luego, dentro de la tabla, escribimos los datos línea por línea. Cada línea se separa con el comando "dos barras inversas invertidas". Los elementos de cada columna  se separan por el símbolo "et". Para dibujar líneas horizontales en la tabla, usamos el comando "hline" después de cada línea. Finalmente, fuera del entorno "tabular", usamos "caption{}" para agregar un título a la tabla, y "label{}" para poder hacer referencia a la tabla en el texto utilizando "ref{}".
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{WhatsApp Image 2024-03-20 at 19.50.47 (1).jpeg}
+\end{figure}
+\FloatBarrier
+\subsection{Hipervínculo}
+Al agregar el paquete “hyperref” antes de "begin{document}" con "usepackage{hyperref}", se puede usar tanto "url{}" como "href{}". \\
+\begin{enumerate}
+    \item "url{}" se utiliza para mostrar URLs sin convertirlas en enlaces activos.
+    \item "href{}" se utiliza para crear enlaces activos a URLs o direcciones de correo electrónico, permitiendo personalizar el texto del enlace mostrado.\\
+\end{enumerate}
+```
+
+
+# Referencias Bibliográficas
+
+Listado de biboiográfía páginas de web y material consultado para este trabajo.
+
+.
